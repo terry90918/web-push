@@ -19,7 +19,7 @@ export default {
     return {
       currentToken: null,
       messaging: null,
-      vapidKey: 'Z17YU1NBxfsVK9SgIarXBu_eGhapzFO1-ZAzJ8nc3S4',
+      vapidKey: 'BP_DRDTV_FWfvTdXKi_kye8QVWtv3foAflC_iwA4UMtYxNU55J1ltX_8oAdpypjD-dwhsiZGJM8QV1jtPEaFP40',
     }
   },
   methods: {
