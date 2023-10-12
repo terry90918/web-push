@@ -3,12 +3,13 @@
     <h1>{{ msg }}</h1>
     <button @click="requestPermission">Notification.requestPermission</button>
     <button @click="getToken">getToken</button>
+    <button @click="onMessage">onMessage</button>
   </div>
 </template>
 
 <script>
 import { initializeApp } from 'firebase/app'
-import { getMessaging, getToken } from 'firebase/messaging'
+import { getMessaging, getToken, onMessage } from 'firebase/messaging'
 
 export default {
   name: 'HelloWorld',
@@ -52,6 +53,11 @@ export default {
         }
       }).catch((err) => {
         console.log('An error occurred while retrieving token.', err)
+      })
+    },
+    onMessage () {
+      onMessage(this.messaging, (payload) => {
+        console.log('Message received. ', payload)
       })
     },
     requestPermission() {

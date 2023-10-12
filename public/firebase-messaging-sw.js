@@ -16,16 +16,12 @@ const app = firebase.initializeApp(firebaseConfig)
 // Initialize Firebase Cloud Messaging and get a reference to the service
 const messaging = firebase.messaging()
 
-messaging.onMessage(messaging, (payload) => {
-  console.log('Message received. ', payload)
-});
-
 messaging.onBackgroundMessage((payload) => {
   console.log('[firebase-messaging-sw.js] Received background message ', payload)
-  const notificationTitle = 'Background Message Title'
+  const notificationTitle = payload.notification.title;
   const notificationOptions = {
-    body: 'Background Message body.',
-    icon: '/img/icons/firebase-logo.png'
+    body: payload.notification.body,
+    icon: payload.notification.image,
   }
   self.registration.showNotification(notificationTitle, notificationOptions);
 })
