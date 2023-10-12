@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <div>v{{ version }}</div>
     <button @click="requestPermission">Notification.requestPermission</button>
     <button @click="getToken">getToken</button>
   </div>
@@ -30,7 +29,6 @@ export default {
       },
       messaging: null,
       vapidKey: 'BP_DRDTV_FWfvTdXKi_kye8QVWtv3foAflC_iwA4UMtYxNU55J1ltX_8oAdpypjD-dwhsiZGJM8QV1jtPEaFP40',
-      version: '1.0.0',
     }
   },
   mounted () {
