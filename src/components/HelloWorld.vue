@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
+    <h2>v1.0.2</h2>
     <button @click="requestPermission">Notification.requestPermission</button>
     <button @click="getToken">getToken</button>
     <button @click="onMessage">onMessage</button>
