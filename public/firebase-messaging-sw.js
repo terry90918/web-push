@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getMessaging, onMessage, onBackgroundMessage } from "firebase/messaging/sw";
+importScripts('https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js')
+importScripts('https://www.gstatic.com/firebasejs/10.4.0/firebase-messaging-compat.js')
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB2pQKfRZ-yJwWxfjS4oKs87PCwjs5kTUs',
@@ -11,23 +11,21 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig)
+const app = firebase.initializeApp(firebaseConfig)
 
 // Initialize Firebase Cloud Messaging and get a reference to the service
-const messaging = getMessaging(app)
+const messaging = firebase.messaging()
 
-onMessage(messaging, (payload) => {
-  console.log('Message received. ', payload);
-  // ...
+messaging.onMessage(messaging, (payload) => {
+  console.log('Message received. ', payload)
 });
 
-onBackgroundMessage((payload) => {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  const notificationTitle = 'Background Message Title';
+messaging.onBackgroundMessage((payload) => {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload)
+  const notificationTitle = 'Background Message Title'
   const notificationOptions = {
     body: 'Background Message body.',
     icon: '/img/icons/firebase-logo.png'
-  };
-
+  }
   self.registration.showNotification(notificationTitle, notificationOptions);
-});
+})
