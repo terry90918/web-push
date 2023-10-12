@@ -19,9 +19,6 @@ export default {
   data() {
     return {
       currentToken: null,
-      messaging: null,
-      vapidKey: 'BP_DRDTV_FWfvTdXKi_kye8QVWtv3foAflC_iwA4UMtYxNU55J1ltX_8oAdpypjD-dwhsiZGJM8QV1jtPEaFP40',
-      version: '1.0.0',
       firebase: null,
       firebaseConfig: {
         apiKey: 'AIzaSyB2pQKfRZ-yJwWxfjS4oKs87PCwjs5kTUs',
@@ -31,6 +28,9 @@ export default {
         messagingSenderId: '1019993383949',
         appId: '1:1019993383949:web:fc1fc34e4cae7d9758e144'
       },
+      messaging: null,
+      vapidKey: 'BP_DRDTV_FWfvTdXKi_kye8QVWtv3foAflC_iwA4UMtYxNU55J1ltX_8oAdpypjD-dwhsiZGJM8QV1jtPEaFP40',
+      version: '1.0.0',
     }
   },
   mounted () {
